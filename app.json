@@ -1,24 +1,31 @@
 {
-      "name": "Shasa Bot",
-      "description": "An Anime Theme Telegram group management bot.",
+      "name": "Layla Robot",
+      "description": "Telegram group management bot.",
+      "logo": "https://telegra.ph/file/8f6b24120aab8490dca45.jpg",
       "keywords": [
          "telegram",
          "anime",
          "group",
          "manager",
-         "Shasa"
-      ],
-    
-   "logo":    "https://telegra.ph/file/c3254e92e7672b773f942.jpg",  
-   "repository": "https://github.com/Mdnoor786/ShasaBot",
+         "Layla"
+      ],   
+   "repository": "https://github.com/QueenArzoo/LaylaRobot.git",
    "addons": [
-          {
+      {
          "options": {
             "version": "12"
          },
          "plan": "heroku-postgresql"
       }
    ],
+   "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-python"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    }
+  ],  
    "env": {
       "TOKEN": {
          "description": "Your bot token. Get one from @BotFather duh",
@@ -35,7 +42,7 @@
          "required": true,
          "value": ""
       },    
-      "SQLALCHEMY_DATABASE_URL": {
+      "SQLALCHEMY_DATABASE_URI": {
          "description": "Your postgres sql db, empty this field if you dont have one.",
          "required": false,
          "value": "sqldbtype://username:pw@hostname:port/db_name"
@@ -43,12 +50,12 @@
       "OWNER_ID": {
          "description": "Your user ID as an integer.",
          "required": true,
-         "value": "1415798813"
+         "value": "797768146"
       },
       "BOT_ID": {
          "description": "Your bot ID.. Use any other bot to get it.",
          "required": true,
-         "value": "1791708933"
+         "value": ""
       },
       "HEROKU_API_KEY": {
         "description": "Your Heroku API key, get it from 'https://dashboard.heroku.com/account'",
@@ -60,14 +67,14 @@
       },
       "OWNER_USERNAME": {
          "description": "Your username without the @",
-         "value": "Simpleboy786"
+         "value": "HEROGAMERS1"
       },
       "SUPPORT_CHAT": {
          "description": "Your Telegram support group chat username where your users will go and bother you with shit But be like: MyGroupChatUsernameBlah. If this ever points to masha support than consider you made an enemy.",
          "required": true,
-         "value": "missShasa_Gbot"
+         "value": "AwesomeSupport"
       },
-      "MONGO_DB_URL": {
+      "MONGO_DB_URI": {
          "description": "Required for database connections.",
          "required": true,
          "value": ""
@@ -83,12 +90,12 @@
      "EVENT_LOGS": {
          "description": "Event logs channel to note down important bot level events, recommend to make this public. ex: '-123456'",
          "required": true,
-         "value": "-1234"
+         "value": "-123456798"
       },
       "JOIN_LOGGER": {
          "description": "A channel where bot will print who added it to what group, useful during debugging or spam handling.",
          "required": true,
-         "value": "-12344"
+         "value": "-123456798"
       },      
       "CASH_API_KEY": {
          "description": "Required for currency converter. Get yours from https://www.alphavantage.co/support/#api-key",
@@ -100,7 +107,7 @@
          "required": true,
          "value": "-xyz"
       },
-      "OPENWEATHERMAP_ID": {
+      "API_OPENWEATHER": {
         "description": "Get your own APPID from https://api.openweathermap.org/data/2.5/weather",
         "value": "",
         "required": false
@@ -108,7 +115,7 @@
       "DEV_USERS": {
          "description": "ID of users who are Devs of your bot (can use /py etc.). If you are a noob and would come and bother Masha support then keep the current ID's here at they are and add yours.",
          "required": false,
-         "value": ""
+         "value": "797768146"
       },
       "sw_api": {
          "description": "Spamwatch API Token, Get one from @SpamWatchBot.",
@@ -119,22 +126,22 @@
          "description": "Enforce gbans across new groups as well as old groups. When a gbanned user talks, he will be banned.",
          "value": "True"
       },
-      "REDLIONS": {
+      "DRAGONS": {
          "description": "A space separated list of user IDs who you want to assign as sudo users.",
          "required": false,
          "value": ""
       },
-      "SPRYZONS": {
+      "DEMONS": {
          "description": "A space separated list of user IDs who you wanna assign as support users(gban perms only).",
          "required": false,
          "value": ""
       },
-      "FAFNIRS": {
-         "description": "A space separated list of user IDs who you wanna assign as fafnir users.",
+      "TIGERS": {
+         "description": "A space separated list of user IDs who you wanna assign as tiger users.",
          "required": false,
          "value": ""
       },
-      "LUINORS": {
+      "WOLVES": {
          "description": "A space separated list of user IDs who you want to assign as whitelisted - can't be banned with your bot.",
          "required": false,
          "value": ""
@@ -175,7 +182,7 @@
       "DONATION_LINK": {
          "description": "Optional: link where you would like to receive donations. If you are a noob, better leave it linking to paul",
          "required": false,
-         "value": "https://www.paypal.me/PaulSonOfLars"
+         "value": "https://t.me/Laylalist"
       },
       "DEL_CMDS": {
          "description": "Set this to True if you want to delete command messages from users who don't have the perms to run that command.",
@@ -185,28 +192,10 @@
       "description": "Make your bot talk using Intellivoid's chatbot API, get your key from https://coffeehouse.intellivoid.net/",
          "required": false,
          "value": ""
-      },      
+   },      
       "BAN_STICKER": {
          "description": "ID of the sticker you want to use when banning people.",
          "required": false,
-         "value": ""
-      },
-      "REDIS_URL": {
-         "value": ""
-      },
-      "STRING_SESSION": {
-         "value": ""
-      },
-      "MONGO_PORT": {
-         "value": ""
-      },
-      "MONGO_DB": {
-         "value": ""
-      },
-      "SPAMWATCH_API": {
-         "value": ""
-      },
-      "REM_BG_API_KEY": {
          "value": ""
       },
       "WALL_API": {
