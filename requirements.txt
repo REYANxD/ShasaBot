@@ -26,3 +26,4 @@ telegraph
 wikipedia
 opencv-python--headless
 moviepy
+aiohttp
